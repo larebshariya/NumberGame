@@ -1,75 +1,13 @@
-# NumberGame
-import java.util.Random;
-import java.util.*;
+Generates a random number within a specified range, such as 1 to 100.
 
-public class NumberGame {
+ Prompts the user to enter their guess for the generated number.
 
-    public static void main(String[] args) {
-        playMultipleRounds();
-    }
+ Compares the user's guess with the generated number and provide feedback on whether the guess
+is correct, too high, or too low.
 
-    private static void playMultipleRounds() {
-        Scanner sc = new Scanner(System.in);
-        Random random = new Random();
-        int roundsPlayed = 0;
-        int roundsWon = 0;
-        do {
-            playGame(random);
-            roundsPlayed++;
+ Then,Repeat steps 2 and 3 until the user guesses the correct number.
+ Limit the number of attempts the user has to guess the number.
+ Add the option for multiple rounds, allowing the user to play again.
+ Display the user's score, which can be based on the number of attempts taken or rounds won.
 
-            System.out.print("Do you want to play again? (yes/no): ");
-            String playAgain = sc.nextLine().toLowerCase();
-            if (!playAgain.equals("yes")) {
-                break;
-            }
-        } while (true);
-
-        System.out.println("\nRounds played: " + roundsPlayed);
-        System.out.println("Rounds won: " + roundsWon);
-    }
-
-    private static void playGame(Random random) {
-        final int lL = 1;
-        final int uL = 100;
-        int target = random.nextInt(uL - lL + 1) + lL;
-        int maxAttempts = 10;
-        int attempts = 0;
-
-        System.out.println("Guess the number between " + lL + " and " + uL+ ":");
-
-        while (attempts < maxAttempts) {
-            int userGuess = getUserInput();
-
-            if (userGuess == target) {
-                System.out.println("Congratulations! You guessed the correct number " + target + " in " +
-                        (attempts + 1) + " attempts.");
-                break;
-            } else if (userGuess < target) {
-                System.out.println("Too low! Try again.");
-            } else {
-                System.out.println("Too high! Try again.");
-            }
-
-            attempts++;
-        }
-
-        if (attempts == maxAttempts) {
-            System.out.println("Sorry, you've run out of attempts. The correct number was " + target + ".");
-        }
-    }
-
-    private static int getUserInput() {
-        Scanner sc = new Scanner(System.in);
-        int userGuess = 0;
-
-        try {
-            System.out.print("Enter your guess: ");
-            userGuess = Integer.parseInt(sc.nextLine());
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid input. Please enter a valid number.");
-            userGuess = getUserInput();
-        }
-
-        return userGuess;
-    }
-}
+      
