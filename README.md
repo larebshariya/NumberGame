@@ -10,4 +10,5 @@ is correct, too high, or too low.
  Add the option for multiple rounds, allowing the user to play again.
  Display the user's score, which can be based on the number of attempts taken or rounds won.
 
-      
+  ![Online Java Compiler - Programiz - Google Chrome 1_25_2025 5_41_17 PM](https://github.com/user-attachments/assets/5054c413-54da-4508-a9e5-b45898a78639)
+    
